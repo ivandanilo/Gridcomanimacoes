@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-OpenSan: 'Open Sans', sans-serif;
+  --ff-Roboto: 'Roboto', sans-serif;
+  --ff-Staatliches: 'Staatliches', cursive;
+
+  --bc-primary: hsl(218, 17%, 62%);
+  --bc-secondary: hsl(0, 0%, 100%);
+  --bc-detalhe-header: hsl(275, 18%, 79%);
+
+  --color-h1: hsl(0, 0%, 100%);
+  --color-p: hsl(232, 17%, 35%);
+
+  font-size: 62.5%;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 128rem;
+  max-height: 72rem;
+  display: flex;
+}
+
+header {
+  width: 37.7rem;
+  background-color: var(--bc-primary);
+  text-align: center;
+}
+
+header img {
+  width: 21.5rem;
+  margin: 3.2rem 0;
+}
+
+h1 {
+  font-family: var(--ff-Staatliches);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 37.7rem;
+  height: 7rem;
+
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 3.4rem;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  background-color: var(--bc-detalhe-header);
+  color: var(--color-h1);
+}
+
+header p {
+  font-family: var(--ff-Roboto);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2rem;
+
+  margin: 3.2rem auto 0;
+
+  color: #ffffff;
+  width: 27.5rem;
+  height: 26.2rem;
+}
+
+main {
+  margin: 6.4rem auto;
+}
+
+.card {
+  display: grid;
+  gap: 3.2rem;
+  grid-template-areas:
+    'A B C'
+    'D B F'
+    'D E F';
+}
+
+.card div:nth-child(1) {
+  grid-area: E;
+  animation: downtop 1500ms 400ms backwards;
+}
+
+.card div:nth-child(2) {
+  grid-area: B;
+  animation: topdown 1500ms;
+}
+
+.card div:nth-child(3) {
+  grid-area: A;
+  animation: topdown 1500ms;
+}
+
+.card div:nth-child(4) {
+  grid-area: C;
+  animation: topdown 1500ms;
+}
+
+.card div:nth-child(5) {
+  grid-area: D;
+  animation: downtop 1500ms 400ms backwards;
+}
+
+.card div:nth-child(6) {
+  grid-area: F;
+  animation: downtop 1500ms 400ms backwards;
+}
+
+footer p {
+  margin-top: 5rem;
+  text-align: center;
+
+  font-family: var(--ff-OpenSan);
+
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+
+  color: var(--color-p);
+}
+
+footer p a {
+  text-decoration: none;
+  font-family: var(--ff-OpenSan);
+  color: var(--color-p);
+  font-weight: bold;
+}
+
+footer p a:hover {
+  opacity: 0.8;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
